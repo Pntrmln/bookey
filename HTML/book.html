@@ -5,52 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foglalás</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/book.css">
     <link rel="stylesheet" href="CSS/Font-Awesome/fontawesome.css">
-    <link rel="stylesheet" href="CSS/Font-Awesome/regular.css"/>
-    <link rel="stylesheet" href="CSS/Font-Awesome/sharp-regular.css"/>
+    <link rel="stylesheet" href="CSS/Font-Awesome/regular.css" />
+    <link rel="stylesheet" href="CSS/Font-Awesome/sharp-regular.css" />
 </head>
 
-<body onload="nav(), footer()">
+<body onload="loadSite()">
     <section class="sect_height_book sect">
-        <div class="container text-center">
+        <div class="container">
             <h1>Foglalás</h1>
-            <div class="row">
-                <div class="col text-center">
-                    <h3>Válasszon időpontot:</h3>
-                    <label>Bejelentkezés:</label>
-                    <input type="date">
-                    <label id="kij">Kijelentkezés:</label>
-                    <input type="date">
-                    <h3 class="mt-5">Válasszon szobát:</h3>
-                    <select>
-                        <option></option>
-                    </select>
-                    <h1 class="mt-5">Személyes adatok</h1>
-                    <h5>Teljes név:</h5>
-                    <input type="text" placeholder="Vezetéknév">
-                    <input type="text" placeholder="Keresztnév">
-                    <br>
-                    <h5>E-mail cím:</h5>
-                    <input type="email" placeholder="minta@cim.hu">
-                    <br>
-                    <h5>Telefonszám:</h5>
-                    <input type="tel" placeholder="06-50-123-4567">
-                    <br>
-                    <button class="btn btn-primary">Foglalás</button>
+            <div class="data row">
+                <div class="col">
+                    <div>
+                        <label for="bej_date">Bejelentkezés:</label>
+                        <input class="form-control" type="date" id="bej_date" name="bej_date" onchange="changeDesc()">
+                        <label for="kij_date">Kijelentkezés:</label>
+                        <input class="form-control" type="date" id="kij_date" name="kij_date" onchange="changeDesc()">
+                        <h4 class="mt-5">Szoba</h4>
+                        <select class="form-select" id="szobaValaszto" onchange="changeDesc()">
+                            <option value="" disabled selected hidden>-- Válassz szobát! --</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col text-center" id="szobaadatok">
-                    <h3>A szoba adatai:</h3>
-                    <h5 id="warn">Ön még nem választott szobát!</h5>
+                <div class="col">
+                    <div class="text-center" id="szobaadatok">
+                        <div id="szobaAdatOszlop">
+                            <div>
+                                <h5 class="warn" id="leiras">Ön még nem választott szobát!</h5>
+                            </div>
+                            <div id="rw2">
+                                <span id="szobaAr">Ár:</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap-3">
+                <h3 class="mt-5">Személyes adatok</h3>
+                <div class="d-flex data gap-3">
+                    <div class="col-md">
+                        <input type="text" class="form-control" placeholder="Vezetéknév" id="vnev">
+                    </div>
+                    <div class="col-md">
+                        <input type="text" class="form-control" placeholder="Keresztnév" id="knev">
+                    </div>
+                </div>
+                <div class="d-flex data gap-3">
+                    <div class="col-md">
+                        <input  type="email" class="form-control" placeholder="minta@cim.hu" id="email">
+                    </div>
+                    <div class="col-md">
+                        <input type="tel" class="form-control" placeholder="06-50-123-4567" id="telefon">
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="align-items-center">
+                        <input name="chkBox" type="checkbox" id="chkBox">
+                        <label for="chkBox">Elfogadom az <b>ÁSZF</b>-et valamint hogy foglalásom <b>fizetési
+                                kötelezettséggel</b> jár.</label>
+                    </div>
+                    <button id="foglalasbtn" class="btn btn-primary" onclick="foglalas()">Foglalás</button>
                 </div>
             </div>
         </div>
+        <div id="siker" class="text-center">
+            <h3>Sikeres foglalás!</h3>
+            <p>Hamarosan visszairányítunk a főoldalra.</p>
+            <div id="vissza">
+                <span id="visszaszamlalo">10</span>
+                <br>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Vissza a főoldalra</button>
+            </div>
+        </div>
     </section>
-    <asd></asd>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
     <script src="JS/script.js"></script>
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script type="module" src="JS/book.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9730806777757567"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>

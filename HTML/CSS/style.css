@@ -1,10 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 
+:root {
+    --bg-cream: #FDFBF7;
+    --primary-green: #4A5D4E;
+    --accent-green: #8A9A86;
+    --dark-slate: #2C3531;
+    --muted-gray: #7A827A;
+    --card-bg: #FFFFFF;
+}
+
 * {
     font-family: "Funnel Display", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
     font-style: normal;
+}
+h1, h2, h3, .navbar-brand {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    color: var(--dark-slate);
+}
+.footer_szin {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    color: var(--accent-green);
+}
+.fooldal_btn {
+    color: var(--bg-cream);
+}
+.fooldal_aszf {
+    color: var(--accent-green);
+}
+
+h4, h5, h6 {
+    font-weight: 600 !important;
+    color: var(--primary-green);
+}
+
+p {
+    line-height: 1.7;
+    font-weight: 400;
+}
+body {
+    background-color: var(--bg-cream);
+    color: var(--dark-slate);
 }
 ::-webkit-scrollbar {
     display: none;
@@ -35,12 +73,21 @@
     font-size: 50px;
 }
 .fs-60 {
-    font-size: 60px;
+    font-size: clamp(40px, 8vw, 60px);
+}
+.hero_fs {
+    font-size: clamp(10px, 4.5vw, 20px);
 }
 
 
 .width1400 {
     max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nagyszovegazoldalelejen {
+    color: white;
 }
 /* .navbar {
     padding-top: 0 !important;
@@ -49,7 +96,7 @@
     display: none;
 }
 .sect_height {
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh);
     width: 100%;
     align-items: center;
     padding: 2rem;
@@ -70,6 +117,23 @@
 .sect {
     margin-top: 56px;
 }
+/* navbar */
+.navbar-scroll-0 {
+    transition: 0.2s;
+    background-color: rgba(74, 93, 78, 0.4);
+}
+.navbar-scroll-x {
+    transition: 0.2s;
+    background-color: var(--bg-cream);
+}
+.nav-link {
+    font-weight: 500 !important;
+    color: var(--dark-slate) !important;
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease;
+}
+
 #fejlec {
     background-image: url('../assets/placeholder.png');
     background-position: center;
@@ -80,13 +144,17 @@
   display: table-cell;
   vertical-align: middle;
 }
-#inner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
+#hero_szoveg {
+    width: 90%;
+    max-width: 500px;
     color: #fff;
+    text-align: center;
+    background-color: rgba(44, 53, 49, 0.75);
+    backdrop-filter: blur(4px);
+    box-shadow: 0px 8px 32px rgba(44, 53, 49, 0.2);
+    /* backdrop-filter: drop-shadow(4px 4px 10px blue); */
+    border-radius: 2rem;
+    padding: 1.5rem;
 }
 
 @media screen and (max-width: 520px) {
@@ -106,57 +174,161 @@
     min-width: 140px;
     min-height: 50px;
     border-radius: 10px;
-    border-color: #fff;
+    border: 2px solid var(--accent-green);
+    background-color: var(--accent-green); 
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+.foglals:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
 }
 #elerhetosegek {
-    background-color: #ccdb72;
+    background-color: var(--bg-cream);
+}
+.kartya {
+    box-shadow: 0px 8px 24px rgba(74, 93, 78, 0.08);
+    background-color: var(--card-bg);
+}
+.card, .kartya {
+    border-radius: 20px !important;
+    overflow: hidden;
+    /* border: none !important; */
+    background-color: var(--card-bg);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 .kozepre {
     margin-left: auto;
     margin-right: auto;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 /* footerhez cucok*/
 #feet { /* gregor kedvence*/
-    background-color: #4b4b4b;
+    background-color: var(--dark-slate);
     min-height: 100px;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
 }
 #felso {
-    color: white;
+    color: var(--accent-green);
 }
 .deco_none {
     text-decoration: none;
 }
 .smol {
     margin-bottom: 2px;
-    color: #fff;
+    color: #E6E8E6;
 }
 .vonalka {
     height: 70px;
     width: 1px;
-    border: #fff 2px solid;
+    border: var(--primary-green) 1px solid;
     border-radius: 1rem;
 }
 .h-vonalka {
-    margin: 1rem 0 1rem 0;
+    margin: 1.5rem auto;
     height: 1px;
-    width: 1350px;
-    border: #fff 1px solid;
-    border-radius: 1rem;
+    width: 100%;
+    max-width: 1350px;
+    border: rgba(138, 154, 134, 0.3) 1px solid;
 }
 #also p {
-    color: white;
+    color: var(--muted-gray);
     margin: 0;
 }
 
 /* aszf(uck) részhesz*/
-/* #aszf {
-    margin-left: auto;
-    margin-right: auto;
-} */
 .spanok {
     height: fit-content;
-    width: 800px;
+    width: 90%;
+    max-width: 800px; 
     margin-left: auto;
     margin-right: auto;
+    padding: 1rem 0;
+}
+.spanok p {
+    text-align: justify;
+    color: var(--dark-slate);
+}
+.vonalka_aszf {
+    width: 10%;
+    background-color: var(--accent-green);
+    border-radius: 1rem;
+    height: 2px;
+    margin: 1rem auto;
+}
+
+/* szobák rész */
+.carousel-inner {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.mFooter {
+    display: none;
+}
+@media screen and (max-width: 700px) {
+    .mFooter {
+        display: block;
+    }
+}
+@media screen and (min-width: 576px) {
+    .modal-dialog {
+        max-width: 1400px;
+    }
+}
+.badgeColor{
+    background: var(--primary-green);
+}
+.badge {
+    font-size: 14px;
+}
+.btn {
+    background: transparent;
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    border-width: 2px;
+    font-weight: 500;
+}
+.btn:hover {
+    color: #fff;
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+.btn:active {
+    background-color: var(--dark-slate) !important;
+    border-color: var(--dark-slate) !important;
+}
+.caruselKepek, .carousel-item {
+    height: 400px;
+    width: 600px;
+}
+.flexIrany {
+    flex-direction: row;
+}
+.leirasH {
+    font-size: 20px;
+    padding-left: 1rem;
+}
+.leirasH ul{
+    list-style-type: none;
+}
+@media screen and (max-width: 1100px) {
+    .flexIrany {
+        flex-direction: column;
+    }
+    .caruselKepek, .carousel-item {
+        width: 100%;
+        height: auto;
+    }
+    .leirasH {
+        font-size: 18px;
+        padding-left: 0;
+    }
+}
+
+th {
+    font-weight: bold;
 }

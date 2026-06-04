@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-sm fixed-top navbar-scroll-0">
+    <div class="container-fluid width1400">
+        <a class="navbar-brand" href="/index.html">Bookey Hotle</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="navbar-nav">
+                <a id="fooldal" class="nav-link fd-600 ${(window.location.pathname == "/" || window.location.pathname == "/index.html") ? "disabled" : ""}" href="index.html">
+                    <i class="fa-regular fa-arrow-left"></i> Vissza a főoldalra
+                </a>
+                <a id="szolg" class="nav-link fd-600 ${(window.location.pathname == "/book.html") ? "disabled" : ""}" href="book.html">Foglalás</a>
+                <a id="szob" class="nav-link fd-600 ${(window.location.pathname == "/szobak.html") ? "disabled" : ""}" href="szobak.html">Szobák</a>
+                <a id="aszf" class="nav-link fd-600 ${(window.location.pathname == "/aszf.html") ? "disabled" : ""}" href="aszf.html">ÁSZF</a>
+            </div>
+        </div>
+    </div>
+</nav>

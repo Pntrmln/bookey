@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": ["Java"],
+    "java.project.referencedLibraries": [
+        "Java/lib/**/*.jar",
+        "Java/FunnelDisplay-Regular.ttf"
+    ]
+}

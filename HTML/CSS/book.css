@@ -6,8 +6,8 @@ h5 {
     display: inline-block;
 }
 
-#warn {
-    color: red;
+.warn {
+    color: #A34A3E;
 }
 
 #kij {
@@ -15,6 +15,125 @@ h5 {
 }
 
 #szobaadatok {
-    background-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+    background-color: rgba(74, 93, 78, 0.06);
+    border: 1px solid rgba(74, 93, 78, 0.1);
     border-radius: 1rem;
+    height: 100%;
+}
+
+#chkBox {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary-green);
+    border-radius: 4px;
+    position: relative;
+    top: 4px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background 0.2s;
+}
+#chkBox:checked {
+    background-color: var(--primary-green);
+}
+#chkBox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* input, select {
+    border-radius: 0.5rem;
+    border: 1px solid #718093;
+    width: 90%;
+    padding: 2px 8px;
+} */
+
+#szobaAr {
+    display: none;
+}
+
+#szobaAdatOszlop {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 10px 2px;
+}
+
+#rw2 {
+    margin-top: auto;
+}
+.data {
+    flex-direction: row; 
+}
+.sect {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--muted-gray);
+    letter-spacing: 0.05em;
+}
+@media screen and (max-width: 768px) {
+    .data {
+        flex-direction: column;
+    }
+    #szobaadatok {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-left-radius: 0rem;
+        border-top-right-radius: 0rem;
+    }
+    #szobaValaszto {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+
+#siker {
+    width: 400px;
+    height: 300px;
+    background-color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 2rem;
+}
+#siker h3 {
+    color: var(--primary-green);
+}
+#siker #vissza {
+    margin-top: 40px;
+}
+
+/* form */
+.form-control, select, input[type="date"] {
+    border-radius: 12px !important;
+    /* border: 1px solid rgba(74, 93, 78, 0.2) !important; */
+    padding: 0.6rem 1rem !important;
+    background-color: #FFFFFF;
+    color: var(--dark-slate);
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    padding-right: calc(1.5em + .75rem) !important;
+}
+
+.form-control:focus, select:focus {
+    border-color: var(--accent-green) !important;
+    box-shadow: 0 0 0 4px rgba(138, 154, 134, 0.15) !important;
+    outline: none;
 }

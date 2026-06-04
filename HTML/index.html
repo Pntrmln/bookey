@@ -3,33 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booke Kuuke</title>
+    <title>Bookey Hotle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/Font-Awesome/fontawesome.css">
     <link rel="stylesheet" href="CSS/Font-Awesome/regular.css"/>
     <link rel="stylesheet" href="CSS/Font-Awesome/sharp-regular.css"/>
 </head>
-<body onload="nav(), footer()">
-    <section id="fejlec" class="text-center sect sect_height">
-        <div id="inner">
-            <h1 class="shadow_s fs-60 fd-600">Booke Kuuke</h1>
+<body onload="loadSite()">
+    <section id="fejlec" class="d-flex align-items-center justify-content-center text-center sect_height">
+        <div id="hero_szoveg" class="d-flex flex-column align-items-center justify-content-center">
+            <h1 class="shadow_s fs-60 fd-600 nagyszovegazoldalelejen">Bookey Hotel</h1>
             <span>
-                <p class="shadow_s fs-20">A hotle, melyben nyugalmad lelde</p>
-                <p class="shadow_s fs-20">Fogalj most, hogy időben elszakadhass a valgósától</p>
+                <p class="shadow_s hero_fs nagyszovegazoldalelejen">A hotel, melyben nyugalmad leled</p>
+                <p class="shadow_s hero_fs nagyszovegazoldalelejen">Foglalj most, és legyen egy életreszóló élményed!</p>
             </span>
-            <button class="foglals" onclick="asd()">
-                <span class="fs-20 fd-600">Foglalj most!</span>
+            <button class="foglals btn" onclick="asd()">
+                <span class="fs-20 fd-600 fooldal_btn">Foglalj most!</span>
             </button>
         </div>
     </section>
     <section id="elerhetosegek" class="sect_height text-center d-flex justify-content-center">
         <div class="width1400">
-            <h1 class="fs-60">Itt majd lesz valami (ja nem)</h1>
+            <h1>Szolgáltatásaink</h1>
+            <h6 class="card-subtitle mb-2 text-body-secondary pb-5">Válassz kitűnő szoba kínálatunkból, és vedd igénybe prémium szolgáltatásaink egyikét</h6>
+            <div class="container">
+                <div class="row justify-content-center gap-5">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Hangszigetelt falak</h5>
+                            <p class="card-text">A pihenését nem zavarhatják meg a nem kívánatos, kellemetlen zajok.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Reggeli az ágyban*</h5>
+                            <p class="card-text">A szobában található telefonnal azonnal hívható a recepció, akik segítségével a reggeli is a szobába repül!</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Jakuzzi és szauna*</h5>
+                            <p class="card-text">Minden szállóvendégünk számára elérhető jakuzzi és szauna!</p>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="py-3 text-body-secondary">*Az alábbi szolgáltatások csak felár ellenében vehetők igénybe. További tájékoztatás: <a href="aszf.html" class="fooldal_aszf">ÁSZF</a></h6>
+            </div>
         </div>
     </section>
-    <asd></asd>
     <script src="JS/script.js"></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9730806777757567" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,2 +1,2 @@
 # Weboldal:
-bookey.tamado.org
+https://bookey.tamado.org
